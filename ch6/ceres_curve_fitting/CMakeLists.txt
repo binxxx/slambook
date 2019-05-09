@@ -15,6 +15,14 @@ include_directories( ${CERES_INCLUDE_DIRS} )
 find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_DIRS} )
 
+# Qt
+find_package(Qt5 REQUIRED
+        Core
+        Test
+        Gui
+        OpenGL
+        Concurrent)
+
 add_executable( curve_fitting main.cpp )
 # 与Ceres和OpenCV链接
 target_link_libraries( curve_fitting ${CERES_LIBRARIES} ${OpenCV_LIBS} )

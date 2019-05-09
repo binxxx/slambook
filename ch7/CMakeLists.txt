@@ -8,7 +8,7 @@ set( CMAKE_CXX_FLAGS "-std=c++11 -O3" )
 list( APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules )
 
 find_package( OpenCV 3.1 REQUIRED )
-# find_package( OpenCV REQUIRED ) # use this if in OpenCV2 
+#find_package( OpenCV REQUIRED ) # use this if in OpenCV2
 find_package( G2O REQUIRED )
 find_package( CSparse REQUIRED )
 
@@ -43,3 +43,9 @@ target_link_libraries( pose_estimation_3d3d
    g2o_core g2o_stuff g2o_types_sba g2o_csparse_extension 
    ${CSPARSE_LIBRARY}
 )
+
+find_package( Qt5 REQUIRED
+        Test
+        OpenGL
+        Concurrent
+        )

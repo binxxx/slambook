@@ -18,6 +18,13 @@ include_directories(
 find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_DIRS} )
 
+# Qt
+find_package(Qt5 REQUIRED
+        OpenGL
+        Test
+        Concurrent
+        )
+
 add_executable( curve_fitting main.cpp )
 # 与G2O和OpenCV链接
 target_link_libraries( curve_fitting 
